@@ -1,0 +1,930 @@
+@font-face {
+    font-family: "SF Bold";
+    src: url("./fonts/SFPRODISPLAYBOLD.OTF");
+}
+
+@font-face {
+    font-family: "SF Medium";
+    src: url("./fonts/SFPRODISPLAYMEDIUM.OTF");
+}
+
+html {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+
+body {
+    display: none;
+    /* background-image: url("./images/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    margin: 0;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(59, 59, 59);
+}
+
+.book {
+    display: none;
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(kitap.png);
+    background-size: cover;
+    zoom: 90%;
+}
+
+.flash {
+    display: none;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background: white;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+
+/* 
+.frame {
+    display: none;
+    width: 600px;
+    height: 350px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(352deg);
+    border: 15px solid #dfdfdf;
+} */
+
+.save_photo {
+    font-size: 4vh;
+    position: absolute;
+    bottom: 2%;
+    left: 6vh;
+    color: #34ffbd;
+    text-shadow: 0px 0px 20px #63726d;
+}
+
+.cancel_photo {
+    font-size: 4vh;
+    position: absolute;
+    bottom: 2%;
+    left: 1vh;
+    color: #ff3434;
+    text-shadow: 0px 0px 20px #63726d;
+}
+
+.book {
+    display: none;
+    width: 450px;
+    height: 70vh;
+    background: #dbdbdbbf;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 20px black;
+}
+
+
+/* .share h1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-size: 2vh;
+}
+
+.share hr {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 1px;
+    background-color: #787878;
+    border: none;
+}
+
+.share button {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: block;
+    width: -webkit-fill-available;
+    padding: 1vh;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-size: 2vh;
+    background: #ffffff63;
+    border: 1px solid #a1a1a1a1;
+}
+
+.share {
+    width: -webkit-fill-available;
+    height: 55vh;
+    background: #ffffff17;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.share ::-webkit-scrollbar {
+    display: unset;
+    width: 1px;
+    scrollbar-width: thin;
+} */
+
+.ileri {
+    position: absolute;
+    bottom: 2%;
+    font-size: 6vh;
+    color: #242424;
+    right: 6%;
+    text-shadow: 0px 0px 20px #e9ac00;
+    transition: .2s;
+}
+
+.geri {
+    position: absolute;
+    bottom: 2%;
+    font-size: 6vh;
+    color: #242424;
+    left: 4%;
+    text-shadow: 0px 0px 20px #e9ac00;
+    transition: .2s;
+}
+
+.kapat {
+    position: absolute;
+    right: 6%;
+    top: 2%;
+    font-size: 3.5vh;
+    text-shadow: 0px 0px 20px #e9ac00;
+    transition: .2s;
+}
+
+.ileri:hover,
+.geri:hover,
+.kapat:hover {
+    color: white;
+}
+
+.page-helpers h1 {
+    position: absolute;
+    top: 1.5%;
+    text-align: center;
+    font-family: sans-serif;
+    left: 4.5%;
+    font-size: 4vh;
+    color: #242424;
+    margin: 0;
+    text-shadow: 0px 0px 20px #e9ac00;
+}
+
+.bottom * {
+    transition: .2s;
+}
+
+.sil {
+    color: #ed0d6a!important;
+}
+
+.paylas {
+    color: #6a0ded!important;
+}
+
+.paylas:hover {
+    background: #6a0ded5b!important;
+    color: white!important;
+}
+
+.sil:hover {
+    background: #ed0d6a42!important;
+    color: white!important;
+}
+
+.cam * {
+    position: absolute;
+}
+
+.left_up {
+    background: url(../img/sol_ust.png) no-repeat;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+    left: 0;
+    top: 0;
+}
+
+.rec {
+    background: url(../img/rec.gif) no-repeat!important;
+    background-size: cover!important;
+}
+
+.right_up {
+    background: url(../img/sag_ust.png) no-repeat;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+    right: 0;
+    top: 0;
+}
+
+.left_down {
+    background: url(../img/sol_alt.png) no-repeat;
+    background-size: cover;
+    width: 1100px;
+    height: 360px;
+    left: 0;
+    bottom: 0;
+}
+
+.right_down {
+    background: url(../img/sag_alt.png) no-repeat;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+    right: 0;
+    bottom: 0;
+}
+
+.center {
+    background: url(../img/orta.png) no-repeat;
+    background-size: cover;
+    width: 640px;
+    height: 360px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 0px) {
+    .cam {
+        zoom: 10%;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .cam {
+        zoom: 30%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .cam {
+        zoom: 30%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cam {
+        zoom: 40%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .cam {
+        zoom: 45%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .cam {
+        zoom: 50%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .cam {
+        zoom: 100%;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .cam {
+        zoom: 170%;
+    }
+}
+
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-wrapper {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50.875vw;
+    height: 33.25vw;
+    border-radius: 0.6vw;
+}
+
+.header {
+    position: absolute;
+    width: 50.875vw;
+    height: 2.3021vw;
+    z-index: 123;
+}
+
+.left-container {
+    position: absolute;
+    position: absolute;
+    width: 10.4167vw;
+    left: 0px;
+    top: 0px;
+    bottom: 0.1px;
+    background: rgba(245, 245, 245, 0.8);
+    background-blend-mode: hard-light;
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40.7742px);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.right-container {
+    position: absolute;
+    left: 10.4167vw;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: #FFFFFF;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.close {
+    position: absolute;
+    left: 1.0417vw;
+    top: 1.0417vw;
+    width: 2.7083vw;
+    height: .625vw;
+}
+
+.search {
+    position: absolute;
+    height: 1.3542vw;
+    width: 20vw;
+    left: 59%;
+    transform: translate(-50%, -50%);
+    top: 1.3vw;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.098);
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-family: "SF Medium";
+    font-size: 0.5vw;
+}
+
+.layouts {
+    position: absolute;
+    top: 0.65vw;
+    left: 44vw;
+    width: 9vw;
+    height: 1.5vw;
+}
+
+.layout {
+    position: relative;
+    width: 1.6146vw;
+    height: 1.25vw;
+    margin-left: 0.3vw;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    left: 13.0057vw;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: .7292vw;
+    color: #232526;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+}
+
+.folders-title {
+    position: absolute;
+    top: 3vw;
+    left: 1vw;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: .625vw;
+    color: #797979;
+    mix-blend-mode: luminosity;
+}
+
+.folders {
+    position: absolute;
+    top: 4.5vw;
+    left: 1vw;
+    width: 9.1146vw;
+    height: 20vw;
+}
+
+.folder {
+    position: relative;
+    width: 9.1146vw;
+    height: 1.4583vw;
+    margin-bottom: 0.2vw;
+    cursor: pointer;
+}
+
+.folder-icon {
+    position: absolute;
+    top: .3125vw;
+    width: 0.8vw;
+    left: .3125vw;
+}
+
+.folder-name {
+    position: absolute;
+    left: 1.5625vw;
+    top: -0.35vw;
+    font-family: "SF Medium";
+    font-style: normal;
+    font-size: .6771vw;
+    color: #232526;
+    transition: all 1s;
+    z-index: 123213;
+}
+
+.folder:hover {
+    background: rgba(0, 0, 0, 0.05);
+    background-blend-mode: luminosity;
+    /* #03 Blur/Background #04 */
+    backdrop-filter: blur(40.7742px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 4px;
+}
+
+.layout-1 {
+    position: absolute;
+    top: 3.5vw;
+    width: 39.5vw;
+    left: 1vw;
+    height: 28vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.recent-c {
+    position: absolute;
+    top: 3.5vw;
+    width: 39.5vw;
+    left: 1vw;
+    height: 28vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.videos-c {
+    position: absolute;
+    top: 3.5vw;
+    width: 39.5vw;
+    left: 1vw;
+    height: 28vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.folders-c {
+    position: absolute;
+    top: 3.5vw;
+    width: 39.5vw;
+    left: 1vw;
+    height: 28vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.documents-c {
+    position: absolute;
+    top: 3.5vw;
+    width: 39.5vw;
+    left: 1vw;
+    height: 28vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.date {
+    /* position: absolute; */
+    font-family: "SF Medium";
+    /* font-style: normal;
+    font-weight: 500;
+    top: 4.3vw;
+    width: 4.5833vw;
+    text-align: center;
+    font-size: .625vw;
+    text-align: center;
+    color: #232526; */
+}
+
+.share {
+    display: none;
+}
+
+#l1 {
+    cursor: pointer;
+}
+
+.photo {
+    position: relative;
+    float: left;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+    width: 4.5833vw;
+    height: 5.8333vw;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.image {
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+    height: 4.5833vw;
+    width: 4.5833vw;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
+.date {
+    position: absolute;
+    font-style: normal;
+    font-weight: 500;
+    top: 4.3vw;
+    width: 4.5833vw;
+    text-align: center;
+    font-size: 0.625vw;
+    color: #232526;
+}
+
+.fa-share {
+    position: absolute;
+    font-size: 0.5vw;
+    top: 0.2vw;
+    left: 4vw;
+    color: #017AFF;
+    display: none;
+}
+
+.fa-trash {
+    position: absolute;
+    font-size: 0.5vw;
+    top: 0.9vw;
+    left: 4vw;
+    color: #017AFF;
+    display: none;
+}
+
+.fullimg {
+    position: absolute;
+    display: none;
+    width: 44.8125vw;
+    height: 25.3125vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #F2F2F7;
+    border-radius: 0.8333vw;
+    z-index: 1232132121;
+    box-shadow: 0px 0px 7px rgb(0 0 0 / 25%);
+    background-size: cover!important;
+}
+
+.fullvid {
+    position: absolute;
+    display: none;
+    width: 44.8125vw;
+    height: 25.3125vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #F2F2F7;
+    border-radius: 0.8333vw;
+    z-index: 1232132121;
+    box-shadow: 0px 0px 7px rgb(0 0 0 / 25%);
+    background-size: cover!important;
+}
+
+.actions {
+    position: absolute;
+    top: 26.5vw;
+    width: 10.5521vw;
+    height: 10.0375vw;
+    background: #F2F2F7;
+    color: #000000;
+    font-size: 0.7vw;
+    text-align: center;
+    line-height: 2.4vw;
+    font-family: "SF Medium";
+    border-radius: 1vw;
+    z-index: 123123123123123213211232131;
+}
+
+.category-selector {
+    position: absolute;
+    top: 26.5vw;
+    left: 11vw;
+    width: 10.5521vw;
+    height: 10.0375vw;
+    background: #F2F2F7;
+    color: #000000;
+    font-size: 0.7vw;
+    text-align: center;
+    line-height: 2.4vw;
+    font-family: "SF Medium";
+    border-radius: 1vw;
+    z-index: 123123123123123213211232131;
+    border-radius: .8333vw;
+}
+
+.action {
+    position: relative;
+    width: 100%;
+    height: 2.5vw;
+    background: #F2F2F7;
+    box-shadow: inset 0px -0.5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.act-icon {
+    position: absolute;
+    top: 0.5vw;
+    left: 8.8vw;
+    width: 1.3vw;
+}
+
+.act-icon2 {
+    position: absolute;
+    top: 0.8vw;
+    left: 9vw;
+    width: 0.9vw;
+}
+
+.share {
+    position: absolute;
+    display: none;
+    width: 20.3125vw;
+    height: 9.8333vw;
+    background: #FFFFFF;
+    border-radius: .625vw;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+    left: 78%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 123112323213;
+}
+
+.share-header {
+    position: absolute;
+    width: 20.3125vw;
+    height: 3.5417vw;
+    background: #FFFFFF;
+    box-shadow: inset 0px -0.5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 12px 12px 0px 0px;
+}
+
+.share-image {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.share-title {
+    position: absolute;
+    left: 3.5vw;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .8333vw;
+    color: #000000;
+}
+
+.share-subtitle {
+    position: absolute;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .7292vw;
+    top: 0.9vw;
+    left: 3.5vw;
+    color: #8A8A8E;
+}
+
+.players {
+    position: absolute;
+    width: 20.3125vw;
+    height: 8.25vw;
+    /* iPhone & iPad/🌝 Background/Tertiary */
+    background: #FFFFFF;
+    box-shadow: inset 0px -0.5px 0px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.player {
+    position: relative;
+    width: 4.2708vw;
+    height: 4.1667vw;
+    top: 3.8vw;
+}
+
+.mail-icon {
+    position: absolute;
+    width: 2.3vw;
+    height: 2.3vw;
+    left: 1vw;
+}
+
+.player-name {
+    position: absolute;
+    top: 2vw;
+    width: 4.2708vw;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .625vw;
+    text-align: center;
+    color: #000000;
+}
+
+.share button {
+    position: absolute;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .625vw;
+    color: #e12929;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    left: 50%;
+    top: 93%;
+    transform: translate(-50%, -50%);
+}
+
+.taked_photo {
+    position: absolute;
+    display: none;
+    background-color: #F2F2F7;
+    border-radius: 0.5vw;
+    width: 15.5417vw;
+    height: 5.5vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.taked_title {
+    position: absolute;
+    width: 15.5417vw;
+    text-align: center;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-size: 1vw;
+}
+
+.taked_subtitle {
+    position: absolute;
+    top: 2vw;
+    width: 15.5417vw;
+    text-align: center;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.6vw;
+}
+
+.iptal {
+    position: absolute;
+    width: 7.770vw;
+    top: 3vw;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .8333vw;
+    text-align: center;
+    color: #007AFF;
+    cursor: pointer;
+}
+
+.kaydet {
+    position: absolute;
+    width: 7.770vw;
+    top: 3vw;
+    left: 7.770vw;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .8333vw;
+    text-align: center;
+    color: #007AFF;
+    cursor: pointer;
+}
+
+.drone-help {
+    position: absolute;
+    left: 38.5vw;
+    top: 0.5vw;
+    display: none;
+    width: 22.5vw;
+    height: 2vw;
+    border-radius: 0.3vw;
+    background-color: #F2F2F7;
+    z-index: 123123123123123213123123123123123123221321
+}
+
+.drone-title {
+    position: absolute;
+    width: 10vw;
+    text-align: center;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-size: 1vw;
+}
+
+.camera-help {
+    position: absolute;
+    left: 36.5vw;
+    top: 0.5vw;
+    display: none;
+    width: 27vw;
+    height: 2vw;
+    border-radius: 0.3vw;
+    background-color: #F2F2F7;
+    z-index: 123123123123123213123123123123123123221321321;
+}
+
+.camera-title {
+    position: absolute;
+    width: 10vw;
+    text-align: center;
+    font-family: 'SF Bold';
+    font-style: normal;
+    font-size: 1vw;
+}
+
+.help-text {
+    position: relative;
+    top: -0.1vw;
+    left: 0.4vw;
+    /* top: 50%; */
+    /* transform: translate(-50%, -50%); */
+    width: 9vw;
+    float: left;
+    text-align: center;
+    font-family: 'SF Medium';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7vw;
+}
+
+.arkaplan {
+    position: absolute;
+    display: none;
+    top: 0vw;
+    left: 0vw;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/Image.png");
+    overflow: hidden;
+    background-repeat: round;
+    background-size: cover;
+    background-position: inherit;
+    background-attachment: fixed;
+    z-index: -2139127381273812738217381273812738126738123678123671283712837128737128;
+}
+
+img.keybinds {
+    position: absolute;
+    width: 1.9vw;
+    left: 19.5vw;
+    box-shadow: 1px solid black;
+    filter: drop-shadow(0 0 1.5vw #000);
+}

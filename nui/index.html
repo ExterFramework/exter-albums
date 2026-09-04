@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exter-albums</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <div class="drone-help">
+        <p class="help-text">Press <b>Enter</b> for take photo</p>
+        <p class="help-text">Press <b>Backspace</b> for cancel</p>
+        <img src="./images/4292669.png" class="keybinds">
+        <!-- <p class="help-text"><b>W</b> forward</p>
+        <p class="help-text"><b>S</b> back</p>
+        <p class="help-text"><b>A</b> border-top-left-radius</p>
+        <p class="help-text"><b>Q</b> up</p>
+        <p class="help-text"><b>E</b> down</p> -->
+    </div>
+    <div class="camera-help">
+        <p class="help-text">Press <b>Enter</b> for take photo</p>
+        <p class="help-text">Press <b>Backspace</b> for cancel</p>
+        <p class="help-text">Press <b>V</b> record video </p>
+    </div>
+
+    <div class="cam">
+        <div class="left_up"></div>
+        <div class="right_up"></div>
+        <div class="center"></div>
+        <div class="left_down"></div>
+        <div class="right_down"></div>
+        <div class="flash"></div>
+
+    </div>
+
+    <div class="taked_photo">
+        <p class="taked_title">Save Photo</p>
+        <p class="taked_subtitle">Would you like to save your photo?</p>
+        <p class="iptal cancel_photo">Cancel</p>
+        <p class="kaydet save_photo">Accept</p>
+    </div>
+    <div class="arkaplan"></div>
+    <div class="main-wrapper">
+        <div class="share">
+            <button>Close</button>
+            <div class="share-header">
+                <img src="./images/sharesss.svg" class="share-image">
+                <p class="share-title">Share</p>
+                <p class="share-subtitle">Share with your friends</p>
+            </div>
+            <div class="players">
+                <div class="player">
+                    <img src="./images/mail-icon.svg" class="mail-icon">
+                    <!-- <p class="player-name"> <b>1</b> <br> Lod Test</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="fullimg">
+            <div class="actions">
+                <div id="paylasfullimg" class="action" style="border-top-left-radius: 1vw; border-top-right-radius: 1vw;">Share <img src="./images/share-logo.svg" class="act-icon2"></div>
+                <div class="action" id="switcher">Switch Category <img src="./images/category.svg" class="act-icon2"></div>
+                <div class="action" id="showall">Show All Photos <img src="./images/allphoto.svg" class="act-icon2"></div>
+                <div id="silfullimg" class="action" style="border-bottom-left-radius: 1vw; border-bottom-right-radius: 1vw;">Cancel <img src="./images/remove.svg" class="act-icon"> </div>
+            </div>
+            <div class="category-selector" style="display: none;">
+                <div id="switchToAll" class="action" style="border-top-left-radius: 1vw; border-top-right-radius: 1vw;">All <img src="./images/category.svg" class="act-icon2"></div>
+                <div id="switchToRecent" class="action">Recent <img src="./images/category.svg" class="act-icon2"></div>
+                <div id="switchToVideos" class="action">Videos <img src="./images/category.svg" class="act-icon2"></div>
+                <div id="switchToFolders" class="action">Folders <img src="./images/category.svg" class="act-icon2"></div>
+                <div id="switchToDocuments" class="action" style="border-bottom-left-radius: 1vw; border-bottom-right-radius: 1vw;">Documents <img src="./images/category.svg" class="act-icon2"></div>
+            </div>
+        </div>
+
+        <video class="fullvid" controls>
+                <source  src="test" type="video/mp4">
+                <div class="actions">
+                    <div id="paylasfullimg" class="action" style="border-top-left-radius: 1vw; border-top-right-radius: 1vw;">Share <img src="./images/share-logo.svg" class="act-icon2"></div>
+                    <div class="action" id="switcher">Switch Category <img src="./images/category.svg" class="act-icon2"></div>
+                    <div class="action" id="showall">Show All Photos <img src="./images/allphoto.svg" class="act-icon2"></div>
+                    <div id="silfullimg" class="action" style="border-bottom-left-radius: 1vw; border-bottom-right-radius: 1vw;">Cancel <img src="./images/remove.svg" class="act-icon"> </div>
+                </div>
+                <div class="category-selector" style="display: none;">
+                    <div id="switchToAll" class="action" style="border-top-left-radius: 1vw; border-top-right-radius: 1vw;">All <img src="./images/category.svg" class="act-icon2"></div>
+                    <div id="switchToRecent" class="action">Recent <img src="./images/category.svg" class="act-icon2"></div>
+                    <div id="switchToVideos" class="action">Videos <img src="./images/category.svg" class="act-icon2"></div>
+                    <div id="switchToFolders" class="action">Folders <img src="./images/category.svg" class="act-icon2"></div>
+                    <div id="switchToDocuments" class="action" style="border-bottom-left-radius: 1vw; border-bottom-right-radius: 1vw;">Documents <img src="./images/category.svg" class="act-icon2"></div>
+                </div>
+          </video>
+
+
+        <div class="header">
+            <img src="./images/lights.svg" class="close">
+            <input type="search" class="search" placeholder="Search Photo">
+            <p class="header-title">Is Graphics</p>
+            <div class="layouts">
+                <img src="./images/layout1.svg" id="l1" class="layout">
+                <img src="./images/layout2.svg" id="l2" class="layout">
+                <img src="./images/layout3.svg" id="l3" class="layout">
+                <!-- <img src="./images/layout4.svg" id="l4" class="layout"> -->
+            </div>
+        </div>
+        <div class="left-container">
+            <p class="folders-title">Favorites</p>
+            <div class="folders">
+                <div id="all" class="folder">
+                    <p class="folder-name">All</p>
+                    <img src="./images/all.svg" class="folder-icon">
+                </div>
+                <div id="recent" class="folder">
+                    <p class="folder-name">Recent</p>
+                    <img src="./images/recent.svg" class="folder-icon">
+                </div>
+                <div id="videos" class="folder">
+                    <p class="folder-name">Videos</p>
+                    <img src="./images/cloud.svg" class="folder-icon">
+                </div>
+                <div id="folders" class="folder">
+                    <p class="folder-name">Folders</p>
+                    <img src="./images/folder.svg" class="folder-icon">
+                </div>
+                <div id="documents" class="folder">
+                    <p class="folder-name">Documents</p>
+                    <img src="./images/documents.svg" class="folder-icon">
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <!-- <div class="share">
+                <h1>Players</h1>
+                <hr>
+                <div class="players">
+                </div>
+                <hr>
+                <button>Cancel</button>
+            </div> -->
+            <div class="recent-c"></div>
+            <div class="documents-c"></div>
+            <div class="videos-c"></div>
+            <div class="folders-c"></div>
+            <div class="layout-1">
+
+                <!-- <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="photo">
+                    <div class="image"></div>
+                    <p class="date">12/21/2023</p>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="book">
+        <div class="fullimg">
+
+        </div>
+        <div class="share">
+            <h1>Players</h1>
+            <hr>
+            <div class="players">
+            </div>
+            <hr>
+            <button>Cancel</button>
+        </div>
+        <div class="photos">
+            <div class="photo" style="background: url(i.jpeg);background-size:cover;">
+                <div class="bottom">
+                    <i class="fa-solid fa-share paylas"></i>
+                    <i class="fa-duotone fa-trash sil"></i>
+                </div>
+            </div>
+        </div>
+        <div class="page-helpers">
+            <i class="fa-regular fa-arrow-down-right ileri"></i>
+            <i class="fa-regular fa-arrow-down-left geri"></i>
+            <i class="fa-thin fa-circle-xmark kapat"></i>
+            <h1>0/0</h1>
+        </div>
+    </div> -->
+
+
+    <script src="js.js"></script>
+</body>
+
+</html>
